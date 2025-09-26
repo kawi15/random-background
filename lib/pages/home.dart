@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:random_background/utils/functions/random_color.dart';
 import 'package:random_background/utils/functions/text_color.dart';
+import 'package:random_background/utils/styles/text_styles.dart';
 
 /// Main page of the application
 class HomePage extends StatefulWidget {
@@ -41,9 +42,8 @@ class _HomePageState extends State<HomePage> {
           child: Center(
             child: Text(
               'Hello there',
-              style: TextStyle(
-                fontSize: 32,
-                color: textColor
+              style: TextStyleBase.header(
+                  textColor: textColor
               ),
             ),
           ),
