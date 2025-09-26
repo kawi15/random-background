@@ -33,17 +33,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: GestureDetector(
-        onTap: () => setState(setColors),
-        child: Container(
-          height: size.height,
-          width: size.width,
-          color: backgroundColor,
-          child: Center(
-            child: Text(
-              'Hello there',
-              style: TextStyleBase.header(
-                  textColor: textColor
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => setState(setColors),
+          child: Container(
+            height: size.height,
+            width: size.width,
+            color: backgroundColor,
+            child: Center(
+              child: Text(
+                'Hello there',
+                style: TextStyleBase.header(
+                    textColor: textColor
+                ),
               ),
             ),
           ),
