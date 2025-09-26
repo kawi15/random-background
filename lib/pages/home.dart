@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:random_background/utils/functions/random_color.dart';
+import 'package:random_background/utils/functions/text_color.dart';
 
 /// Main page of the application
 class HomePage extends StatefulWidget {
@@ -13,12 +14,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  late Color color;
+  late Color backgroundColor;
+  late Color textColor;
 
   @override
   void initState() {
     super.initState();
-    color = randomColor();
+    setColors();
+  }
+
+  void setColors() {
+    backgroundColor = randomColor();
+    textColor = textColorForBackground(backgroundColor);
   }
 
   @override
@@ -26,18 +33,18 @@ class _HomePageState extends State<HomePage> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: GestureDetector(
-        onTap: () {
-          setState(() {
-            color = randomColor();
-          });
-        },
+        onTap: () => setState(setColors),
         child: Container(
           height: size.height,
           width: size.width,
-          color: color,
-          child: const Center(
+          color: backgroundColor,
+          child: Center(
             child: Text(
-                'Hello there'
+              'Hello there',
+              style: TextStyle(
+                fontSize: 32,
+                color: textColor
+              ),
             ),
           ),
         ),
