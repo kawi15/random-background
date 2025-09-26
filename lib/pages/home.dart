@@ -1,9 +1,9 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:random_background/utils/functions/random_color.dart';
 
+/// Main page of the application
 class HomePage extends StatefulWidget {
+  /// Creates an instance of [HomePage]
   const HomePage({super.key});
 
   @override
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
           height: size.height,
           width: size.width,
           color: color,
-          child: Center(
+          child: const Center(
             child: Text(
                 'Hello there'
             ),

@@ -5,7 +5,10 @@ void main() {
   runApp(const MyApp());
 }
 
+/// Root widget of the application
 class MyApp extends StatelessWidget {
+
+  ///Creates instance of the [MyApp]
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
